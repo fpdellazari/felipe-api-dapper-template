@@ -5,7 +5,8 @@ public static class SwaggerExtensions
 {
     public static void AddSwagger(this WebApplicationBuilder builder)
     {
-        builder.Services.AddSwaggerGen(swagger => {
+        builder.Services.AddSwaggerGen(swagger =>
+        {
             swagger.SwaggerDoc("v1", new OpenApiInfo
             {
                 Version = "v1",
@@ -21,17 +22,18 @@ public static class SwaggerExtensions
                 In = ParameterLocation.Header,
                 Description = "Insira seu token JWT.",
             });
-            swagger.AddSecurityRequirement(new OpenApiSecurityRequirement {
-        {
-            new OpenApiSecurityScheme {
-                Reference = new OpenApiReference {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
+            swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme {
+                        Reference = new OpenApiReference {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },
+                    new string[] { }
                 }
-            },
-            new string[] { }
-        }
-    });
+            });
         });
     }
 }

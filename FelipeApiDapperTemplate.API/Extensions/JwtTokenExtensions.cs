@@ -10,11 +10,13 @@ public static class JwtTokenExtensions
     public static void AddJwtTokenAuthentication(this WebApplicationBuilder builder, string jwtPrivateKey)
     {
         var privateKey = Encoding.ASCII.GetBytes(jwtPrivateKey);
-        builder.Services.AddAuthentication(options => {
+        builder.Services.AddAuthentication(options => 
+        {
             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
             options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
         })
-        .AddJwtBearer(options => {
+        .AddJwtBearer(options => 
+        {
             options.RequireHttpsMetadata = false;
             options.SaveToken = true;
             options.TokenValidationParameters = new TokenValidationParameters
@@ -28,7 +30,8 @@ public static class JwtTokenExtensions
             };
             options.Events = new JwtBearerEvents
             {
-                OnChallenge = context => {
+                OnChallenge = context => 
+                {
                     context.HandleResponse();
                     context.Response.StatusCode = 401;
                     context.Response.ContentType = "application/json";
