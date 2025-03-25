@@ -18,21 +18,11 @@ public class AuthenticationController : Controller
     [HttpPost]
     public IActionResult Authenticate(AuthenticationDTO authenticationModel)
     {
-        try
-        {
-            var token = _authenticationService.Authenticate(authenticationModel);
+        var token = _authenticationService.Authenticate(authenticationModel);
 
-            if (token == "")
-            {
-                return Unauthorized(new { Message = "Usuário ou senha inválidos." });
-            }
+        if (token == "") return Unauthorized(new { Message = "Usuário ou senha inválidos." });        
 
-            return Ok(new { Message = "Token gerado com sucesso.", Token = token });
-        }
-        catch (Exception e)
-        {
-            return StatusCode(500, new { Message = "Erro interno no servidor.", Details = e.Message });
-        }
+        return Ok(token);        
     }
 }
 
