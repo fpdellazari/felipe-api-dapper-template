@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FelipeApiDapperTemplate.API", "FelipeApiDapperTemplate.API", "{531F34F0-AA51-4CD1-BB6E-0C076C1EFD74}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FelipeApiDapperTemplate.API", "FelipeApiDapperTemplate.API\FelipeApiDapperTemplate.API.csproj", "{D695E6EA-5422-4FDD-A3A8-B04927524C33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FelipeApiDapperTemplate.Application", "FelipeApiDapperTemplate.Application", "{19090499-8102-41DE-8AFB-A9D09CFE4838}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FelipeApiDapperTemplate.Application", "FelipeApiDapperTemplate.Application\FelipeApiDapperTemplate.Application.csproj", "{D822DF8D-88F7-4669-91E8-0B40E4BF4A1B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FelipeApiDapperTemplate.Domain", "FelipeApiDapperTemplate.Domain", "{6545E155-DA35-475B-8E94-732567C23299}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FelipeApiDapperTemplate.Domain", "FelipeApiDapperTemplate.Domain\FelipeApiDapperTemplate.Domain.csproj", "{473B29F9-0ADB-4653-B4D8-95C6EBB94E3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FelipeApiDapperTemplate.Infrastructure", "FelipeApiDapperTemplate.Infrastructure", "{ABEC7115-436A-40DD-94A7-8BE3B33EA593}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FelipeApiDapperTemplate.Infrastructure", "FelipeApiDapperTemplate.Infrastructure\FelipeApiDapperTemplate.Infrastructure.csproj", "{F89E0CF5-8BC6-4D24-89C7-005217E2112F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FelipeApiDapperTemplate.Tests", "FelipeApiDapperTemplate.Tests", "{5F73F49A-AFCB-4D13-8EF3-8E9580929333}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FelipeApiDapperTemplate.Tests", "FelipeApiDapperTemplate.Tests\FelipeApiDapperTemplate.Tests.csproj", "{86D20A2A-6BC0-4F0B-96AF-6C013B73E580}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D695E6EA-5422-4FDD-A3A8-B04927524C33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D695E6EA-5422-4FDD-A3A8-B04927524C33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D695E6EA-5422-4FDD-A3A8-B04927524C33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D695E6EA-5422-4FDD-A3A8-B04927524C33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D822DF8D-88F7-4669-91E8-0B40E4BF4A1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D822DF8D-88F7-4669-91E8-0B40E4BF4A1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D822DF8D-88F7-4669-91E8-0B40E4BF4A1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D822DF8D-88F7-4669-91E8-0B40E4BF4A1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{473B29F9-0ADB-4653-B4D8-95C6EBB94E3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{473B29F9-0ADB-4653-B4D8-95C6EBB94E3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{473B29F9-0ADB-4653-B4D8-95C6EBB94E3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{473B29F9-0ADB-4653-B4D8-95C6EBB94E3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F89E0CF5-8BC6-4D24-89C7-005217E2112F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F89E0CF5-8BC6-4D24-89C7-005217E2112F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F89E0CF5-8BC6-4D24-89C7-005217E2112F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F89E0CF5-8BC6-4D24-89C7-005217E2112F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D20A2A-6BC0-4F0B-96AF-6C013B73E580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D20A2A-6BC0-4F0B-96AF-6C013B73E580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D20A2A-6BC0-4F0B-96AF-6C013B73E580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D20A2A-6BC0-4F0B-96AF-6C013B73E580}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D695E6EA-5422-4FDD-A3A8-B04927524C33} = {531F34F0-AA51-4CD1-BB6E-0C076C1EFD74}
+		{D822DF8D-88F7-4669-91E8-0B40E4BF4A1B} = {19090499-8102-41DE-8AFB-A9D09CFE4838}
+		{473B29F9-0ADB-4653-B4D8-95C6EBB94E3C} = {6545E155-DA35-475B-8E94-732567C23299}
+		{F89E0CF5-8BC6-4D24-89C7-005217E2112F} = {ABEC7115-436A-40DD-94A7-8BE3B33EA593}
+		{86D20A2A-6BC0-4F0B-96AF-6C013B73E580} = {5F73F49A-AFCB-4D13-8EF3-8E9580929333}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7625EA5B-5D89-42B6-8951-5B0847291A24}
+	EndGlobalSection
+EndGlobal

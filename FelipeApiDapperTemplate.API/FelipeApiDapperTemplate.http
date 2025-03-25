@@ -1,0 +1,6 @@
+@FelipeApiDapperTemplate_HostAddress = http://localhost:5070
+
+GET {{FelipeApiDapperTemplate_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
