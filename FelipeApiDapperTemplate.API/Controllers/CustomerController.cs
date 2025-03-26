@@ -37,7 +37,7 @@ public class CustomerController : ControllerBase
         }
         catch (KeyNotFoundException ex)
         {
-            return BadRequest(new { Message = ex.Message });
+            return NotFound(new { Message = ex.Message });
         }
     }
 
@@ -71,7 +71,7 @@ public class CustomerController : ControllerBase
         }
         catch (KeyNotFoundException ex)
         {
-            return BadRequest(new { Message = ex.Message });
+            return NotFound(new { Message = ex.Message });
         }
     }
 }
