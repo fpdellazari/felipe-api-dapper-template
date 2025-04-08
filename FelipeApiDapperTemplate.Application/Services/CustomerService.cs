@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿using FelipeApiDapperTemplate.Application.Mappers;
 using FelipeApiDapperTemplate.Domain.Models.DTOs;
 using FelipeApiDapperTemplate.Domain.Repositories;
 using FelipeApiDapperTemplate.Domain.Services;
@@ -7,12 +7,10 @@ namespace FelipeApiDapperTemplate.Application.Services;
 
 public class CustomerService : ICustomerService
 {
-    private readonly IMapper _mapper;
     private readonly ICustomerRepository _customerRepository;
 
-    public CustomerService(IMapper mapper, ICustomerRepository customerRepository)
+    public CustomerService(ICustomerRepository customerRepository)
     {
-        _mapper = mapper;
         _customerRepository = customerRepository;
     }
 
@@ -20,14 +18,14 @@ public class CustomerService : ICustomerService
     {
         var customer = await _customerRepository.CreateAsync(createUpdateCustomer);
 
-        return _mapper.Map<CustomerDTO>(customer);
+        return customer.MapToDTO();
     }
 
     public async Task<IEnumerable<CustomerDTO>> GetAsync()
     {
         var customers = await _customerRepository.GetAsync();
 
-        return _mapper.Map<List<CustomerDTO>>(customers);
+        return customers.MapToDTOList();
     }
 
     public async Task<CustomerDTO> GetByIdAsync(int id)
@@ -36,7 +34,7 @@ public class CustomerService : ICustomerService
 
         if (customer is null) throw new KeyNotFoundException("Cliente não encontrado.");
 
-        return _mapper.Map<CustomerDTO>(customer);
+        return customer.MapToDTO();
     }
 
     public async Task<CustomerDTO> UpdateAsync(int id, CreateUpdateCustomerDTO createUpdateCustomer)
@@ -47,7 +45,7 @@ public class CustomerService : ICustomerService
 
         var updatedCustomer = await _customerRepository.UpdateAsync(id, createUpdateCustomer);
 
-        return _mapper.Map<CustomerDTO>(updatedCustomer);
+        return updatedCustomer.MapToDTO();
     }
 }
 

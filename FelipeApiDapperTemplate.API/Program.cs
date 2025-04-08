@@ -4,7 +4,6 @@ using System.Data;
 using Microsoft.Data.SqlClient;
 using FelipeApiDapperTemplate.Domain.Repositories;
 using FelipeApiDapperTemplate.Infrastructure.Repositories;
-using FelipeApiDapperTemplate.Application.Mapper;
 using FelipeApiDapperTemplate.Domain.Services.Authentication;
 using FelipeApiDapperTemplate.Application.Services.Authentication;
 using FelipeApiDapperTemplate.Application.Validators;
@@ -32,9 +31,6 @@ builder.Services.AddCors(options => {
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-
-// AutoMapper
-builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 // Services
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
