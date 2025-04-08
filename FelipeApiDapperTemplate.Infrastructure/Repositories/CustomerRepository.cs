@@ -15,7 +15,7 @@ public class CustomerRepository : ICustomerRepository
         _dbConnection = dbConnection;
     }
 
-    public async Task<Customer> CreateAsync(CreateCustomerDTO createCustomer)
+    public async Task<Customer> CreateAsync(CreateUpdateCustomerDTO createUpdateCustomer)
     {
         string query = @" INSERT INTO Customer (Name, 
                                                 Age, 
@@ -27,7 +27,7 @@ public class CustomerRepository : ICustomerRepository
                                   @Phone, 
                                   @Email); ";
 
-        var customer = await _dbConnection.QuerySingleAsync<Customer>(query, createCustomer);
+        var customer = await _dbConnection.QuerySingleAsync<Customer>(query, createUpdateCustomer);
 
         return customer;
     }
@@ -65,7 +65,7 @@ public class CustomerRepository : ICustomerRepository
         return customer;
     }
 
-    public async Task<Customer> UpdateAsync(int id, UpdateCustomerDTO updateCustomer)
+    public async Task<Customer> UpdateAsync(int id, CreateUpdateCustomerDTO createUpdateCustomer)
     {
         string query = @" UPDATE Customer SET Name = @Name,
 				                                  Age = @Age,
@@ -78,10 +78,10 @@ public class CustomerRepository : ICustomerRepository
         var parameters = new 
         { 
             Id = id,
-            Name = updateCustomer.Name,
-            Age = updateCustomer.Age,
-            Phone = updateCustomer.Phone,
-            Email = updateCustomer.Email
+            Name = createUpdateCustomer.Name,
+            Age = createUpdateCustomer.Age,
+            Phone = createUpdateCustomer.Phone,
+            Email = createUpdateCustomer.Email
         };
 
         var customer = await _dbConnection.QuerySingleAsync<Customer>(query, parameters);

@@ -45,8 +45,7 @@ builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
 // Validadores com Fluent Validation
-builder.Services.AddScoped<IValidator<CreateCustomerDTO>, CreateCustomerValidator>();
-builder.Services.AddScoped<IValidator<UpdateCustomerDTO>, UpdateCustomerValidator>();
+builder.Services.AddScoped<IValidator<CreateUpdateCustomerDTO>, CreateUpdateCustomerValidator>();
 
 // Swagger
 builder.AddSwagger();

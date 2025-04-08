@@ -16,9 +16,9 @@ public class CustomerService : ICustomerService
         _customerRepository = customerRepository;
     }
 
-    public async Task<CustomerDTO> CreateAsync(CreateCustomerDTO createCustomer)
+    public async Task<CustomerDTO> CreateAsync(CreateUpdateCustomerDTO createUpdateCustomer)
     {
-        var customer = await _customerRepository.CreateAsync(createCustomer);
+        var customer = await _customerRepository.CreateAsync(createUpdateCustomer);
 
         return _mapper.Map<CustomerDTO>(customer);
     }
@@ -39,13 +39,13 @@ public class CustomerService : ICustomerService
         return _mapper.Map<CustomerDTO>(customer);
     }
 
-    public async Task<CustomerDTO> UpdateAsync(int id, UpdateCustomerDTO updateCustomer)
+    public async Task<CustomerDTO> UpdateAsync(int id, CreateUpdateCustomerDTO createUpdateCustomer)
     {
         var customer = await _customerRepository.GetByIdAsync(id);
 
         if (customer is null) throw new KeyNotFoundException("Cliente não encontrado.");
 
-        var updatedCustomer = await _customerRepository.UpdateAsync(id, updateCustomer);
+        var updatedCustomer = await _customerRepository.UpdateAsync(id, createUpdateCustomer);
 
         return _mapper.Map<CustomerDTO>(updatedCustomer);
     }

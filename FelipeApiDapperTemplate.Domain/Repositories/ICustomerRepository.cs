@@ -5,8 +5,8 @@ namespace FelipeApiDapperTemplate.Domain.Repositories;
 
 public interface ICustomerRepository
 {
-    Task<Customer> CreateAsync(CreateCustomerDTO createCustomer);
+    Task<Customer> CreateAsync(CreateUpdateCustomerDTO createUpdateCustomer);
     Task<IEnumerable<Customer>> GetAsync();
     Task<Customer?> GetByIdAsync(int id);
-    Task<Customer> UpdateAsync(int id, UpdateCustomerDTO updateCustomer);
+    Task<Customer> UpdateAsync(int id, CreateUpdateCustomerDTO createUpdateCustomer);
 }

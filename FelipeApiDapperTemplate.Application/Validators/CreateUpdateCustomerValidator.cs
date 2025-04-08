@@ -4,9 +4,9 @@ using System.Text.RegularExpressions;
 
 namespace FelipeApiDapperTemplate.Application.Validators;
 
-public class CreateCustomerValidator : AbstractValidator<CreateCustomerDTO>
+public class CreateUpdateCustomerValidator : AbstractValidator<CreateUpdateCustomerDTO>
 {
-    public CreateCustomerValidator()
+    public CreateUpdateCustomerValidator()
     {
         RuleFor(customer => customer.Name)
             .NotEmpty().WithMessage("O nome é obrigatório.")

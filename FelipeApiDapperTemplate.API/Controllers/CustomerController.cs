@@ -43,13 +43,13 @@ public class CustomerController : ControllerBase
 
     [HttpPost]
     [Authorize]
-    public async Task<IActionResult> CreateCustomer([FromBody] CreateCustomerDTO createCustomer, [FromServices] IValidator<CreateCustomerDTO> validator)
+    public async Task<IActionResult> CreateCustomer([FromBody] CreateUpdateCustomerDTO createUpdateCustomer, [FromServices] IValidator<CreateUpdateCustomerDTO> validator)
     {
-        var validationResult = await validator.ValidateAsync(createCustomer);
+        var validationResult = await validator.ValidateAsync(createUpdateCustomer);
 
         if (!validationResult.IsValid) return BadRequest(validationResult.ToDictionary());
 
-        var customer = await _customerService.CreateAsync(createCustomer);
+        var customer = await _customerService.CreateAsync(createUpdateCustomer);
 
         return Ok(customer);
     }
@@ -57,15 +57,15 @@ public class CustomerController : ControllerBase
     [HttpPut]
     [Route("{id:int}")]
     [Authorize]
-    public async Task<IActionResult> UpdateCustomer(int id, [FromBody] UpdateCustomerDTO updateCustomer, [FromServices] IValidator<UpdateCustomerDTO> validator)
+    public async Task<IActionResult> UpdateCustomer(int id, [FromBody] CreateUpdateCustomerDTO createUpdateCustomer, [FromServices] IValidator<CreateUpdateCustomerDTO> validator)
     {
-        var validationResult = await validator.ValidateAsync(updateCustomer);
+        var validationResult = await validator.ValidateAsync(createUpdateCustomer);
 
         if (!validationResult.IsValid) return BadRequest(validationResult.ToDictionary());
 
         try
         {
-            var customer = await _customerService.UpdateAsync(id, updateCustomer);
+            var customer = await _customerService.UpdateAsync(id, createUpdateCustomer);
 
             return Ok(customer);
         }
